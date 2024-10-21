@@ -106,3 +106,92 @@ query GET_HELLO {
 - [Float]
 
 tipo não null = String!, [String!]! (obrigatório)
+
+### Object Types (Custom Types)
+
+```
+
+ typeDefs: gql`
+    type Query {
+      user: User
+    }
+
+    type User {
+      id: ID!
+      userName: String!
+    }
+  `,
+  resolvers: {
+    Query: {
+      user: () => {
+        return {
+          id: 'asa9d09a0-pa9',
+          userName: 'Admin',
+        };
+      },
+    },
+  },
+```
+
+Playground
+
+```
+query GET_USER {
+  user {
+    id
+    userName
+  }
+}
+```
+
+```
+//retorno
+
+{
+  "data": {
+    "user": {
+      "id": "asa9d09a0-pa9",
+      "userName": "Admin"
+    }
+  }
+}
+```
+
+Outro exemplo:
+
+```
+ typeDefs: gql`
+    type Query {
+      user: User
+      users: [User]
+    }
+
+    type User {
+      id: ID!
+      userName: String!
+    }
+  `,
+  resolvers: {
+    Query: {
+      user: () => {
+        return {
+          id: 'asa9d09a0-pa9',
+          userName: 'Admin',
+        };
+      },
+      users: () => {
+        return [
+          {
+            id: 'asa9d09a0-pa9',
+            userName: 'Admin'
+          },
+
+          {
+            id: '23923j923-pa9',
+            userName: 'Client'
+          },
+        ];
+      },
+    },
+  },
+```

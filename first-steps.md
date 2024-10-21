@@ -86,6 +86,23 @@ query GET_HELLO {
 }
 ```
 
-## \*NOTE
+### \*NOTE
 
-Playground do GraphQl = Testar minhas consultas, query, mutation ou subscription.
+- Playground do GraphQl = Testar minhas consultas, query, mutation ou subscription.
+
+- resolvers = é obrigatório que para cada resolver definido tenha uma definição no schema. Os resolvers são referentes aos tipos definidos no schema.
+
+- GraphQl tem tipagem forte.
+
+### Slacar Types
+
+- ID
+- String
+- Int
+- Float
+- Boolean
+- [String]
+- [Int]
+- [Float]
+
+tipo não null = String!, [String!]! (obrigatório)

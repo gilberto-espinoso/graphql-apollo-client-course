@@ -94,6 +94,8 @@ query GET_HELLO {
 
 - GraphQl tem tipagem forte.
 
+---
+
 ### Slacar Types
 
 - ID

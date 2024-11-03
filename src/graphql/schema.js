@@ -4,6 +4,7 @@ import { userResolvers } from './user/resolvers';
 import { postTypeDefs } from './post/typedefs';
 import { postResolvers } from './post/resolvers';
 import { ApiFiltersTypedefs } from './api-filters/typedefs';
+import { apiFiltersResolvers } from './api-filters/resolvers';
 
 const rootTypeDefs = gql`
   type Query {
@@ -23,4 +24,9 @@ export const typeDefs = [
   postTypeDefs,
   ApiFiltersTypedefs,
 ];
-export const resolvers = [rootResolvers, userResolvers, postResolvers];
+export const resolvers = [
+  rootResolvers,
+  userResolvers,
+  postResolvers,
+  apiFiltersResolvers,
+];
